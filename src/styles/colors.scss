@@ -1,0 +1,47 @@
+// Primary Colors
+$primary-color: #1976d2; // Main brand color
+$primary-light: #63a4ff;
+$primary-dark: #004ba0;
+
+// Secondary Colors
+$secondary-color: #ff4081;
+$secondary-light: #ff79b0;
+$secondary-dark: #c60055;
+
+// Background Colors
+$background-light: #f5f5f5;
+$background-dark: #121212;
+
+// Text Colors
+$text-primary: #212121;
+$text-secondary: #757575;
+$text-light: #ffffff;
+$text-dark: #000000;
+
+// Border Colors
+$border-light: #e0e0e0;
+$border-dark: #424242;
+
+// Status Colors
+$success-color: #4caf50;
+$warning-color: #ff9800;
+$error-color: #f44336;
+$info-color: #2196f3;
+
+// Gradients
+$gradient-primary: linear-gradient(135deg, $primary-light, $primary-dark);
+$gradient-secondary: linear-gradient(135deg, $secondary-light, $secondary-dark);
+
+// Utility Colors
+$overlay-dark: rgba(0, 0, 0, 0.5);
+$overlay-light: rgba(255, 255, 255, 0.5);
+
+// Export for Global Use
+:export {
+  primary-color: $primary-color;
+  secondary-color: $secondary-color;
+  background-light: $background-light;
+  background-dark: $background-dark;
+  text-primary: $text-primary;
+  text-secondary: $text-secondary;
+}
