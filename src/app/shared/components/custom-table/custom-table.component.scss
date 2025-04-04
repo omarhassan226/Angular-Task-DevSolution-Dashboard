@@ -1,0 +1,42 @@
+.table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+th {
+  background-color: #f8f9fa;
+  font-weight: bold;
+  text-align: left;
+  padding: 10px;
+}
+
+td {
+  padding: 10px;
+}
+
+.product-img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+}
+
+.badge {
+  padding: 5px 10px;
+  font-size: 12px;
+  border-radius: 5px;
+}
+
+// .badge-primary {
+//   background-color: #007bff;
+//   color: white;
+// }
+
+// .badge-success {
+//   background-color: #28a745;
+//   color: white;
+// }
+
+// .badge-warning {
+//   background-color: #ffc107;
+//   color: black;
+// }
