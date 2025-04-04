@@ -18,13 +18,8 @@
         (click)="sidebarItemSelection('dashboard')"
         [ngClass]="{ active: selectedItem == 'dashboard' }"
       >
-        <div
-          class="nav-item-container"
-          [ngClass]="{ active: selectedItem == 'dashboard' }"
-        >
-          <mat-icon [ngClass]="{ active: selectedItem == 'dashboard' }"
-            >home</mat-icon
-          >
+        <div class="nav-item-container">
+          <mat-icon>home</mat-icon>
           <span>Dashboard</span>
         </div>
       </a>
@@ -32,16 +27,11 @@
         mat-list-item
         routerLink="/orders"
         class="nav-item"
-        [ngClass]="{ active: selectedItem == 'orders' }"
         (click)="sidebarItemSelection('orders')"
+        [ngClass]="{ active: selectedItem == 'orders' }"
       >
-        <div
-          class="nav-item-container"
-          [ngClass]="{ active: selectedItem == 'orders' }"
-        >
-          <mat-icon [ngClass]="{ active: selectedItem == 'orders' }"
-            >shopping_cart</mat-icon
-          >
+        <div class="nav-item-container">
+          <mat-icon>shopping_cart</mat-icon>
           <span>Orders</span>
         </div>
       </a>
@@ -51,48 +41,9 @@
         (click)="sidebarItemSelection('users')"
         [ngClass]="{ active: selectedItem == 'users' }"
       >
-        <div
-          class="nav-item-container"
-          [ngClass]="{ active: selectedItem == 'users' }"
-        >
-          <mat-icon [ngClass]="{ active: selectedItem == 'users' }"
-            >people</mat-icon
-          >
+        <div class="nav-item-container">
+          <mat-icon>people</mat-icon>
           <span>Users</span>
-        </div>
-      </a>
-      <a
-        mat-list-item
-        routerLink="/items"
-        class="nav-item"
-        (click)="sidebarItemSelection('items')"
-        [ngClass]="{ active: selectedItem == 'items' }"
-      >
-        <div
-          class="nav-item-container"
-          [ngClass]="{ active: selectedItem == 'items' }"
-        >
-          <mat-icon [ngClass]="{ active: selectedItem == 'items' }"
-            >storefront</mat-icon
-          >
-          <span>Items</span>
-        </div>
-      </a>
-      <a
-        mat-list-item
-        routerLink="/transactions"
-        class="nav-item"
-        (click)="sidebarItemSelection('transaction')"
-        [ngClass]="{ active: selectedItem == 'transaction' }"
-      >
-        <div
-          class="nav-item-container"
-          [ngClass]="{ active: selectedItem == 'transaction' }"
-        >
-          <mat-icon [ngClass]="{ active: selectedItem == 'transaction' }"
-            >receipt_long</mat-icon
-          >
-          <span>Transactions</span>
         </div>
       </a>
       <a
@@ -102,79 +53,20 @@
         (click)="sidebarItemSelection('reports')"
         [ngClass]="{ active: selectedItem == 'reports' }"
       >
-        <div
-          class="nav-item-container"
-          [ngClass]="{ active: selectedItem == 'reports' }"
-        >
-          <mat-icon [ngClass]="{ active: selectedItem == 'reports' }"
-            >bar_chart</mat-icon
-          >
+        <div class="nav-item-container">
+          <mat-icon>bar_chart</mat-icon>
           <span>Reports</span>
-        </div>
-      </a>
-      <hr class="divider" />
-      <a
-        mat-list-item
-        routerLink="/messages"
-        class="nav-item messages"
-        (click)="sidebarItemSelection('chat')"
-        [ngClass]="{ active: selectedItem == 'chat' }"
-      >
-        <div
-          class="nav-item-container"
-          [ngClass]="{ active: selectedItem == 'chat' }"
-          [ngClass]="{ 'message-notifiy': !messageNotify }"
-        >
-          <mat-icon [ngClass]="{ active: selectedItem == 'chat' }"
-            >chat</mat-icon
-          >
-          <span>Messages</span>
-          <span class="notification-dot"></span>
-        </div>
-      </a>
-      <a
-        mat-list-item
-        routerLink="/support"
-        class="nav-item"
-        (click)="sidebarItemSelection('support')"
-        [ngClass]="{ active: selectedItem == 'support' }"
-      >
-        <div
-          class="nav-item-container"
-          [ngClass]="{ active: selectedItem == 'support' }"
-        >
-          <mat-icon [ngClass]="{ active: selectedItem == 'support' }"
-            >support</mat-icon
-          >
-          <span>Support</span>
-        </div>
-      </a>
-      <a
-        mat-list-item
-        routerLink="/settings"
-        class="nav-item"
-        (click)="sidebarItemSelection('settings')"
-        [ngClass]="{ active: selectedItem == 'settings' }"
-      >
-        <div
-          class="nav-item-container"
-          [ngClass]="{ active: selectedItem == 'settings' }"
-        >
-          <mat-icon [ngClass]="{ active: selectedItem == 'settings' }"
-            >settings</mat-icon
-          >
-          <span>Settings</span>
         </div>
       </a>
     </mat-nav-list>
   </mat-sidenav>
 
   <!-- Main Content -->
-  <mat-sidenav-content>
+  <mat-sidenav-content class="content-container">
     <!-- Navbar -->
     <mat-toolbar color="primary">
-      <div class="nav-container">
-        <div class="left-section">
+      <div class="container-fluid d-flex justify-content-between">
+        <div class="d-flex align-items-center">
           <button
             *ngIf="!isSidebarOpen"
             mat-icon-button
@@ -184,7 +76,7 @@
             <mat-icon>menu</mat-icon>
           </button>
 
-          <div class="search-container" *ngIf="isSidebarOpen">
+          <div class="search-container d-none d-md-flex">
             <button class="search-btn">
               <i class="fa fa-search"></i>
             </button>
@@ -192,7 +84,7 @@
           </div>
         </div>
 
-        <div class="right-section">
+        <div class="d-flex align-items-center">
           <button mat-icon-button class="market-bag-button">
             <mat-icon>shopping_bag</mat-icon>
             <span class="badge">3</span>
@@ -202,7 +94,6 @@
             <span class="badge">5</span>
           </button>
 
-          <!-- User Profile -->
           <div class="user-profile" (click)="toggleDropdown()">
             <img
               src="assets/images/profile.png"
@@ -210,12 +101,11 @@
               class="profile-img"
             />
             <span class="user-name">Johny Larsen</span>
-            <mat-icon class="arrow-icon">{{
-              isDropdownOpen ? "keyboard_arrow_up" : "keyboard_arrow_down"
-            }}</mat-icon>
+            <mat-icon class="arrow-icon">
+              {{ isDropdownOpen ? "keyboard_arrow_up" : "keyboard_arrow_down" }}
+            </mat-icon>
           </div>
 
-          <!-- Dropdown Menu -->
           <div class="dropdown-menu" *ngIf="isDropdownOpen">
             <button mat-menu-item (click)="logout()">Logout</button>
           </div>
@@ -224,21 +114,28 @@
     </mat-toolbar>
 
     <!-- Page Content -->
-    <div class="content">
-      <div>
-        <app-analytics-cards />
+    <div class="container-fluid py-3">
+      <div class="row">
+        <div class="col-12">
+          <app-analytics-cards></app-analytics-cards>
+        </div>
       </div>
 
-      <div class="d-flex flex-wrap gap-8">
-        <app-report-chart class="flex-grow-[1] card shadow"></app-report-chart>
-        <app-visits-chart
-          class="card shadow flex-grow-[0.5]"
-          [ngClass]="{ 'flex-grow-[1]': !isSidebarOpen }"
-        ></app-visits-chart>
+      <div class="row g-3">
+        <div class="col-md-9 col-12">
+          <app-report-chart class="card shadow"></app-report-chart>
+        </div>
+        <div class="col-md-3 col-12">
+          <app-visits-chart
+            class="card shadow justify-content-between h-100"
+          ></app-visits-chart>
+        </div>
       </div>
 
-      <div>
-        <app-recent-orders></app-recent-orders>
+      <div class="row mt-3">
+        <div class="col-12">
+          <app-recent-orders></app-recent-orders>
+        </div>
       </div>
     </div>
   </mat-sidenav-content>
