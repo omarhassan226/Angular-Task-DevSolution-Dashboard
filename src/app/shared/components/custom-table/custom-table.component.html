@@ -1,5 +1,5 @@
-<div class="container mt-3">
-  <table mat-table [dataSource]="dataSource" class="mat-elevation-z8 table">
+<div class="my-[32px]">
+  <table mat-table [dataSource]="dataSource" class="shadow">
     <!-- Image Column -->
     <ng-container matColumnDef="image">
       <th mat-header-cell *matHeaderCellDef>Item</th>
@@ -37,12 +37,12 @@
       <th mat-header-cell *matHeaderCellDef>Status</th>
       <td mat-cell *matCellDef="let element">
         <span
-          class="badge"
-          [ngClass]="[
-            element.status === 'Pending' ? 'badge-primary' : '',
-            element.status === 'Approved' ? 'badge-success' : '',
-            element.status === 'In Process' ? 'badge-warning text-dark' : ''
-          ]"
+          class="custom-badge"
+          [ngClass]="{
+            pending: element.status === 'Pending',
+            approved: element.status === 'Approved',
+            'in-process': element.status === 'In Process'
+          }"
         >
           {{ element.status }}
         </span>
