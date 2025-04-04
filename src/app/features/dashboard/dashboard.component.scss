@@ -1,5 +1,6 @@
 @import "@angular/material";
 @import "../../../styles/colors.scss";
+@import "../../../styles/typography.scss";
 
 $primary-color: #ffffff;
 $secondary-color: #f5f5f5;
@@ -48,9 +49,9 @@ $text-color: #000000;
 
     mat-nav-list a {
       color: #ffffff;
-      &:hover {
-        background-color: lighten(#424242, 10%);
-      }
+      //   &:hover {
+      //     background-color: lighten(#424242, 10%);
+      //   }
     }
   }
 
@@ -74,6 +75,7 @@ $text-color: #000000;
 
 .brand-name {
   color: black;
+  font-weight: $font-weight-medium;
 }
 
 .search-container {
@@ -138,6 +140,10 @@ $text-color: #000000;
   font-weight: bold;
 }
 
+.user-name {
+  font-size: 1rem;
+}
+
 .right-section {
   gap: 5px;
   display: flex;
@@ -158,6 +164,7 @@ $text-color: #000000;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  flex-grow: 0.5;
   gap: 5px;
 }
 
@@ -228,4 +235,76 @@ strong {
     align-items: center;
     justify-content: center;
   }
+}
+
+.nav-item-container {
+  display: flex;
+  color: $icon-color;
+  gap: 16px;
+  align-items: center;
+  justify-content: flex-start;
+  font-weight: $font-weight-medium;
+}
+
+.notification-dot {
+  width: 12px;
+  height: 12px;
+  background-color: #fb7b7b;
+  border-radius: 50%;
+  margin-left: auto;
+}
+
+.message-notifiy {
+  color: #000000;
+  font-weight: $font-weight-medium;
+}
+
+.active {
+  color: #007bff !important;
+  background-color: #edf4ff;
+  // color: white !important;
+  border-radius: 5px;
+}
+
+.sidebar {
+  padding: 1rem;
+}
+
+.selectedItem {
+  font-size: 1rem;
+}
+
+a {
+  border-radius: 5px !important;
+}
+
+.search-container {
+  display: flex;
+  align-items: center;
+  position: relative;
+  background-color: $icon-gray;
+  width: 100%;
+  padding-left: 40px;
+}
+
+.search-input {
+  width: 100%;
+  padding: 10px 40px 10px 10px;
+  //   border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+}
+
+.search-btn {
+  position: absolute;
+  background: transparent;
+  border: none;
+  width: fit-content;
+  left: 14px;
+  cursor: pointer;
+}
+
+.search-btn i {
+  font-size: 18px;
+  color: #888;
 }
