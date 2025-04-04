@@ -1,1 +1,16 @@
-<app-custom-table [dataSource]="orders"></app-custom-table>
+<div class="header-conatiner">
+  <div
+    style="
+      display: flex;
+      justify-content: space-between;
+      width: 100%;
+      max-width: 100%;
+    "
+  >
+    <h6 style="font-weight: 500">ٌRecent Orders</h6>
+    <div style="cursor: pointer">
+      View Order Page <i class="fa-solid fa-arrow-right"></i>
+    </div>
+  </div>
+  <app-custom-table [dataSource]="orders"></app-custom-table>
+</div>

@@ -1,23 +1,26 @@
 <div
-  class="col-xl-3 cardWithShadow custom-card overflow-hidden w-full h-full"
+  class="custom-card overflow-hidden w-full h-full"
   style="width: 100%; padding: 0; max-width: 100%"
 >
-  <div class="card custom-card mb-0 text-center h-100" style="width: 100%">
+  <div
+    class="card custom-card mb-0 text-center h-100"
+    style="width: 100%; border-radius: 20px"
+  >
     <div
-      class="card-body align-content-center align-items-stretch pt-4 d-flex flex-column justify-content-between"
+      class="card-body align-content-center align-items-center pt-4 d-flex justify-content-center"
     >
       <span class="avatar-xl avatar-rounded me-2 mb-2 text-primary">
         <div *ngIf="data?.icon" style="width: 80px; margin: auto">
           <img [src]="data.icon" [alt]="data.title" style="max-width: 100%" />
         </div>
       </span>
-      <div class="fw-medium fs-16">{{ data?.title | truncate : 60 }}</div>
-      <p class="mb-4 text-muted fs-11">{{ data?.des | truncate : 60 }}</p>
-      <div class="btn-list">
-        <a href="#" class="btn btn-primary btn-block">
-          <span class="me-2">Show</span>
-          <span class="loading"><i class="fas fa-list fs-16"></i></span>
-        </a>
+      <div class="d-flex align-items-center justify-content-between gap-3">
+        <div class="d-flex flex-column">
+          <div class="fw-medium fs-16">{{ data?.title | truncate : 60 }}</div>
+          <p class="text-muted fs-11 m-0">{{ data?.des | truncate : 60 }}</p>
+        </div>
+
+        <div class="badge badge-success">+5.5%</div>
       </div>
     </div>
   </div>

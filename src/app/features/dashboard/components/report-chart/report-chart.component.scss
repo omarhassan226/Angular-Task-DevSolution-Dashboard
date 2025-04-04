@@ -1,0 +1,12 @@
+.header {
+  display: flex;
+  gap: 20px;
+}
+
+.header-container {
+  display: flex;
+  width: 100%;
+  max-width: 100%;
+  align-items: center;
+  justify-content: space-between;
+}

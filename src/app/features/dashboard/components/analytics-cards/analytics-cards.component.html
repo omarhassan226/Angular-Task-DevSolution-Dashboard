@@ -1,11 +1,13 @@
 <ng-container>
   <div class="col-12 p-0 my-[42px]">
+    <h6 style="font-weight: 500">Analytics</h6>
     <div class="row gy-4">
       <div class="col-12 col-sm-4 col-md-3" routerLink="/guide">
         <app-custom-analytics-card
+          class="py-5"
           [data]="{
-            title: 'User Guide',
-            icon: 'assets/images/svgs/user-guide.svg',
+            title: 'Total Revenue',
+            icon: 'assets/images/Icon_Total_Revenue.png',
             heightCard: '100%',
             des: 'Access detailed user guides and manuals'
           }"
@@ -14,8 +16,8 @@
       <div class="col-12 col-sm-4 col-md-3" routerLink="/faq">
         <app-custom-analytics-card
           [data]="{
-            title: 'FAQs',
-            icon: 'assets/images/svgs/faq.svg',
+            title: 'Today Revenue',
+            icon: 'assets/images/Icon_Today Revenue.png',
             heightCard: '100%',
             des: 'Find answers to frequently asked questions'
           }"
@@ -25,8 +27,8 @@
       <div class="col-12 col-sm-4 col-md-3" routerLink="/faq">
         <app-custom-analytics-card
           [data]="{
-            title: 'FAQs',
-            icon: 'assets/images/svgs/knowleadge.svg',
+            title: 'Items Sold',
+            icon: 'assets/images/Icon_Sales.png',
             heightCard: '100%',
             des: 'Find answers to frequently asked questions'
           }"
@@ -36,8 +38,8 @@
       <div class="col-12 col-sm-4 col-md-3" routerLink="/tutorial">
         <app-custom-analytics-card
           [data]="{
-            title: ' Tutorials ',
-            icon: 'assets/images/svgs/tutorial.svg',
+            title: ' Users Active ',
+            icon: 'assets/images/Icon_Users.png',
             heightCard: '100%',
             des: 'Explore tutorials to get better with the platform'
           }"

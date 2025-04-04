@@ -1,16 +1,18 @@
-<div class="chart-container p-0">
-  <div class="header">
-    <h2>Report</h2>
-    <button mat-button [matMenuTriggerFor]="menu">Sales</button>
-    <mat-menu #menu="matMenu">
-      <button mat-menu-item>Sales</button>
-    </mat-menu>
-  </div>
+<div class="chart-container p-[16px]">
+  <div class="header-container">
+    <div class="header">
+      <h6 style="font-weight: 500; padding-left: 8px">Report</h6>
+      <button mat-button [matMenuTriggerFor]="menu">Sales</button>
+      <mat-menu #menu="matMenu">
+        <button mat-menu-item>Sales</button>
+      </mat-menu>
+    </div>
 
-  <div class="tabs">
-    <button mat-button (click)="changeTab('daily')">Day</button>
-    <button mat-button (click)="changeTab('weekly')">Week</button>
-    <button mat-button (click)="changeTab('monthly')">Month</button>
+    <div class="tabs">
+      <button mat-button (click)="changeTab('daily')">Day</button>
+      <button mat-button (click)="changeTab('weekly')">Week</button>
+      <button mat-button (click)="changeTab('monthly')">Month</button>
+    </div>
   </div>
 
   <!-- ApexChart -->

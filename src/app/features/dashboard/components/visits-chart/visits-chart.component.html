@@ -1,36 +1,23 @@
-<div class="tabs">
-  <button
-    class="tab-button"
-    [class.active]="selectedTab === 'day'"
-    (click)="setTab('day')"
-  >
-    Day
-  </button>
-  <button
-    class="tab-button"
-    [class.active]="selectedTab === 'week'"
-    (click)="setTab('week')"
-  >
-    Week
-  </button>
-  <button
-    class="tab-button"
-    [class.active]="selectedTab === 'month'"
-    (click)="setTab('month')"
-  >
-    Month
-  </button>
-</div>
+<div class="chart-container h-100 d-flex flex-column justify-content-around">
+  <div class="header-container">
+    <h6 style="font-weight: 500; padding-left: 24px">Visits</h6>
+    <div class="tabs">
+      <button mat-button (click)="setTab('day')">Day</button>
+      <button mat-button (click)="setTab('week')">Week</button>
+      <button mat-button (click)="setTab('month')">Month</button>
+    </div>
+  </div>
 
-<div id="chart">
-  <apx-chart
-    [series]="chartOptions.series!"
-    [chart]="chartOptions.chart!"
-    [dataLabels]="chartOptions.dataLabels!"
-    [plotOptions]="chartOptions.plotOptions!"
-    [yaxis]="chartOptions.yaxis!"
-    [xaxis]="chartOptions.xaxis!"
-    [fill]="chartOptions.fill!"
-    [title]="chartOptions.title!"
-  ></apx-chart>
+  <div id="chart">
+    <apx-chart
+      [series]="chartOptions.series!"
+      [chart]="chartOptions.chart!"
+      [dataLabels]="chartOptions.dataLabels!"
+      [plotOptions]="chartOptions.plotOptions!"
+      [yaxis]="chartOptions.yaxis!"
+      [xaxis]="chartOptions.xaxis!"
+      [fill]="chartOptions.fill!"
+      [title]="chartOptions.title!"
+    ></apx-chart>
+  </div>
 </div>
