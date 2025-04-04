@@ -1,3 +1,108 @@
-<div>
-  <app-analytics-cards />
-</div>
+<mat-sidenav-container class="layout-container">
+  <!-- Sidebar -->
+  <mat-sidenav
+    #sidenav
+    [mode]="isSidebarOpen ? 'side' : 'over'"
+    [opened]="isSidebarOpen"
+    class="sidebar"
+  >
+    <div class="sidebar-header">
+      <img src="assets/images/logo.png" alt="Manager Pro Logo" class="logo" />
+      <span class="brand-name">Manager <strong>Pro</strong></span>
+    </div>
+    <mat-nav-list>
+      <a mat-list-item routerLink="/dashboard" class="nav-item active">
+        <mat-icon>home</mat-icon>
+        <span>Dashboard</span>
+      </a>
+      <a mat-list-item routerLink="/orders" class="nav-item">
+        <mat-icon>shopping_cart</mat-icon>
+        <span>Orders</span>
+      </a>
+      <a mat-list-item routerLink="/users" class="nav-item">
+        <mat-icon>people</mat-icon>
+        <span>Users</span>
+      </a>
+      <a mat-list-item routerLink="/items" class="nav-item">
+        <mat-icon>storefront</mat-icon>
+        <span>Items</span>
+      </a>
+      <a mat-list-item routerLink="/transactions" class="nav-item">
+        <mat-icon>receipt_long</mat-icon>
+        <span>Transactions</span>
+      </a>
+      <a mat-list-item routerLink="/reports" class="nav-item">
+        <mat-icon>bar_chart</mat-icon>
+        <span>Reports</span>
+      </a>
+      <hr class="divider" />
+      <a mat-list-item routerLink="/messages" class="nav-item messages">
+        <mat-icon>chat</mat-icon>
+        <span>Messages</span>
+        <span class="notification-dot"></span>
+      </a>
+      <a mat-list-item routerLink="/support" class="nav-item">
+        <mat-icon>support</mat-icon>
+        <span>Support</span>
+      </a>
+      <a mat-list-item routerLink="/settings" class="nav-item">
+        <mat-icon>settings</mat-icon>
+        <span>Settings</span>
+      </a>
+    </mat-nav-list>
+  </mat-sidenav>
+
+  <!-- Main Content -->
+  <mat-sidenav-content>
+    <!-- Navbar -->
+    <mat-toolbar color="primary">
+      <div class="nav-container">
+        <div class="left-section">
+          <button
+            mat-icon-button
+            (click)="sidenav.toggle()"
+            class="menu-button"
+          >
+            <mat-icon>menu</mat-icon>
+          </button>
+          <span>Admin Dashboard</span>
+        </div>
+
+        <div class="right-section">
+          <button mat-icon-button class="market-bag-button">
+            <mat-icon>shopping_bag</mat-icon>
+            <span class="badge">3</span>
+          </button>
+          <button mat-icon-button class="notifications-button">
+            <mat-icon>notifications</mat-icon>
+            <span class="badge">5</span>
+          </button>
+
+          <!-- User Profile -->
+          <div class="user-profile" (click)="toggleDropdown()">
+            <img
+              src="assets/images/profile.png"
+              alt="profile-image"
+              class="profile-img"
+            />
+            <span class="user-name">Johny Larsen</span>
+            <mat-icon class="arrow-icon">{{
+              isDropdownOpen ? "keyboard_arrow_up" : "keyboard_arrow_down"
+            }}</mat-icon>
+          </div>
+
+          <!-- Dropdown Menu -->
+          <div class="dropdown-menu" *ngIf="isDropdownOpen">
+            <button mat-menu-item (click)="logout()">Logout</button>
+          </div>
+        </div>
+      </div>
+    </mat-toolbar>
+
+    <!-- Page Content -->
+    <div class="content">
+      <app-analytics-cards></app-analytics-cards>
+      <router-outlet></router-outlet>
+    </div>
+  </mat-sidenav-content>
+</mat-sidenav-container>

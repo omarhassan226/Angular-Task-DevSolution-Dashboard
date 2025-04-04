@@ -36,6 +36,11 @@ $gradient-secondary: linear-gradient(135deg, $secondary-light, $secondary-dark);
 $overlay-dark: rgba(0, 0, 0, 0.5);
 $overlay-light: rgba(255, 255, 255, 0.5);
 
+//icons background
+$icon-gray: #e7edf0;
+$sidebar-bg: #faf9fd;
+$main-color: #0561fc;
+
 // Export for Global Use
 :export {
   primary-color: $primary-color;
@@ -44,4 +49,7 @@ $overlay-light: rgba(255, 255, 255, 0.5);
   background-dark: $background-dark;
   text-primary: $text-primary;
   text-secondary: $text-secondary;
+  icon-gray: $icon-gray;
+  sidebar-bg: $sidebar-bg;
+  main-color: $main-color;
 }
