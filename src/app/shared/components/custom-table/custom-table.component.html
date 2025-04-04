@@ -1,5 +1,5 @@
 <div class="card p-[32px]">
-  <table mat-table [dataSource]="dataSource" class="table-container">
+  <table mat-table [dataSource]="tableDataSource" class="table-container">
     <!-- Image Column -->
     <ng-container matColumnDef="image">
       <th
@@ -10,32 +10,40 @@
         Item
       </th>
       <td mat-cell *matCellDef="let element">
-        <img [src]="element.image" alt="Product Image" class="product-img" />
+        <img
+          [src]="element.productId.icon"
+          alt="Product Image"
+          class="product-img"
+        />
       </td>
     </ng-container>
 
     <!-- Name Column -->
     <ng-container matColumnDef="name">
       <th mat-header-cell *matHeaderCellDef>Name</th>
-      <td mat-cell *matCellDef="let element">{{ element.name }}</td>
+      <td mat-cell *matCellDef="let element">{{ element.productId.title }}</td>
     </ng-container>
 
     <!-- Qty Column -->
     <ng-container matColumnDef="qty">
       <th mat-header-cell *matHeaderCellDef>Qty</th>
-      <td mat-cell *matCellDef="let element">{{ element.qty }}</td>
+      <td mat-cell *matCellDef="let element">{{ element.quantity }}</td>
     </ng-container>
 
     <!-- Date Column -->
     <ng-container matColumnDef="date">
       <th mat-header-cell *matHeaderCellDef>Order Date</th>
-      <td mat-cell *matCellDef="let element">{{ element.date }}</td>
+      <td mat-cell *matCellDef="let element">
+        {{ element.createdAt | date : "longDate" }}
+      </td>
     </ng-container>
 
     <!-- Amount Column -->
     <ng-container matColumnDef="amount">
       <th mat-header-cell *matHeaderCellDef>Amount</th>
-      <td mat-cell *matCellDef="let element">${{ element.amount }}</td>
+      <td mat-cell *matCellDef="let element">
+        ${{ element.quantity * element.productId.price }}
+      </td>
     </ng-container>
 
     <!-- Status Column -->
@@ -51,12 +59,12 @@
         <span
           class="custom-badge"
           [ngClass]="{
-            pending: element.status === 'Pending',
-            approved: element.status === 'Approved',
-            'in-process': element.status === 'In Process'
+            pending: element.statusId.code === 0,
+            approved: element.statusId.code === 1,
+            'in-process': element.statusId.code === 2
           }"
         >
-          {{ element.status }}
+          {{ element.statusId.status }}
         </span>
       </td>
     </ng-container>
@@ -69,3 +77,9 @@
     <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
   </table>
 </div>
+
+<mat-paginator
+  [pageSize]="5"
+  [pageSizeOptions]="[5, 10, 25]"
+  showFirstLastButtons
+></mat-paginator>

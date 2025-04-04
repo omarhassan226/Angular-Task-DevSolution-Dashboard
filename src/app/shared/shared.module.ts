@@ -20,6 +20,7 @@ import { MatMenuModule } from '@angular/material/menu';
 import { NgxChartsModule } from '@swimlane/ngx-charts';
 import { CustomTableComponent } from './components/custom-table/custom-table.component';
 import { MatTableModule } from '@angular/material/table';
+import { MatPaginatorModule } from '@angular/material/paginator';
 
 const SharedComponents = [CustomAnalyticsCardComponent, CustomTableComponent];
 const AngularMaterialSharedModules = [
@@ -35,11 +36,13 @@ const AngularMaterialSharedModules = [
   MatCardModule,
   MatMenuModule,
   NgxChartsModule,
+  MatPaginatorModule,
+  MatTableModule
 ];
 
 @NgModule({
   declarations: [...SharedComponents],
-  imports: [CommonModule, SharedRoutingModule, TruncatePipe, MatTableModule],
+  imports: [CommonModule, SharedRoutingModule, TruncatePipe, ...AngularMaterialSharedModules],
   exports: [...SharedComponents, ...AngularMaterialSharedModules],
 })
 export class SharedModule {}

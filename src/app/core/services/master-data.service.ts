@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { inject, Injectable } from '@angular/core';
 import { environment } from '../../../environments/environment.development';
-import { analytics } from '../models/master-data-models';
+import { analytics, OrderItem } from '../models/master-data-models';
 import { api_routes } from '../constants/api_routes';
 
 @Injectable({
@@ -21,6 +21,6 @@ export class MasterDataService {
   }
 
   getOrders() {
-    return this.http.get(environment.apiUrl + api_routes.orders);
+    return this.http.get<OrderItem[]>(environment.apiUrl + api_routes.orders);
   }
 }
