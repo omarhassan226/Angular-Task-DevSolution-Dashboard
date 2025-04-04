@@ -9,7 +9,8 @@
             title: 'Total Revenue',
             icon: 'assets/images/Icon_Total_Revenue.png',
             heightCard: '100%',
-            des: 'Access detailed user guides and manuals'
+            currentYear: analyticsData.totalRevenue.currentYear,
+            lastYear: analyticsData.totalRevenue.lastYear
           }"
         ></app-custom-analytics-card>
       </div>
@@ -19,7 +20,8 @@
             title: 'Today Revenue',
             icon: 'assets/images/Icon_Today Revenue.png',
             heightCard: '100%',
-            des: 'Find answers to frequently asked questions'
+            todayRevenue: analyticsData.todayRevenue.today,
+            lastDay: analyticsData.todayRevenue.lastDay
           }"
         ></app-custom-analytics-card>
       </div>
@@ -30,7 +32,7 @@
             title: 'Items Sold',
             icon: 'assets/images/Icon_Sales.png',
             heightCard: '100%',
-            des: 'Find answers to frequently asked questions'
+            soldItems: analyticsData.soldItems
           }"
         ></app-custom-analytics-card>
       </div>
@@ -41,7 +43,7 @@
             title: ' Users Active ',
             icon: 'assets/images/Icon_Users.png',
             heightCard: '100%',
-            des: 'Explore tutorials to get better with the platform'
+            activeUsers: analyticsData.activeUsers
           }"
         ></app-custom-analytics-card>
       </div>

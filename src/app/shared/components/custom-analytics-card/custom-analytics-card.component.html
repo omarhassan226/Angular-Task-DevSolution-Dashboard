@@ -17,10 +17,46 @@
       <div class="d-flex align-items-center justify-content-between gap-3">
         <div class="d-flex flex-column">
           <div class="fw-medium fs-16">{{ data?.title | truncate : 60 }}</div>
-          <p class="text-muted fs-11 m-0">{{ data?.des | truncate : 60 }}</p>
+          <p class="text-muted fs-11 m-0">
+            {{ data?.currentYear | truncate : 60 }}
+          </p>
+
+          <p class="text-muted fs-11 m-0">
+            {{ data?.todayRevenue | truncate : 60 }}
+          </p>
+
+          <p class="text-muted fs-11 m-0">
+            {{ data?.soldItems | truncate : 60 }}
+          </p>
+
+          <p class="text-muted fs-11 m-0">
+            {{ data?.activeUsers | truncate : 60 }}
+          </p>
         </div>
 
-        <div class="badge badge-success">+5.5%</div>
+        <div
+          *ngIf="totalRevenuePercentage"
+          [ngClass]="{
+            badge: true,
+            'badge-success': totalRevenuePercentage > 0,
+            'badge-danger': totalRevenuePercentage < 0
+          }"
+        >
+          {{ totalRevenuePercentage > 0 ? "+" : "-" }}
+          {{ totalRevenuePercentage.toFixed(1) }}%
+        </div>
+
+        <div
+          *ngIf="todayRevenuePercentage"
+          [ngClass]="{
+            badge: true,
+            'badge-success': todayRevenuePercentage > 0,
+            'badge-danger': todayRevenuePercentage < 0
+          }"
+        >
+          {{ todayRevenuePercentage > 0 ? "+" : "" }}
+          {{ todayRevenuePercentage.toFixed(1) }}%
+        </div>
       </div>
     </div>
   </div>
