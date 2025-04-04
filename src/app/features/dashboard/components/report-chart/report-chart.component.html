@@ -1,0 +1,28 @@
+<div class="chart-container p-0">
+  <div class="header">
+    <h2>Report</h2>
+    <button mat-button [matMenuTriggerFor]="menu">Sales</button>
+    <mat-menu #menu="matMenu">
+      <button mat-menu-item>Sales</button>
+    </mat-menu>
+  </div>
+
+  <div class="tabs">
+    <button mat-button (click)="changeTab('daily')">Day</button>
+    <button mat-button (click)="changeTab('weekly')">Week</button>
+    <button mat-button (click)="changeTab('monthly')">Month</button>
+  </div>
+
+  <!-- ApexChart -->
+  <apx-chart
+    [series]="series"
+    [chart]="chart"
+    [title]="title"
+    [xaxis]="xaxis"
+    [yaxis]="yaxis"
+    [dataLabels]="dataLabels"
+    [markers]="markers"
+    [fill]="fill"
+    [tooltip]="tooltip"
+  ></apx-chart>
+</div>

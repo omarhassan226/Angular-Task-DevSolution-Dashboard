@@ -1,0 +1,36 @@
+<div class="tabs">
+  <button
+    class="tab-button"
+    [class.active]="selectedTab === 'day'"
+    (click)="setTab('day')"
+  >
+    Day
+  </button>
+  <button
+    class="tab-button"
+    [class.active]="selectedTab === 'week'"
+    (click)="setTab('week')"
+  >
+    Week
+  </button>
+  <button
+    class="tab-button"
+    [class.active]="selectedTab === 'month'"
+    (click)="setTab('month')"
+  >
+    Month
+  </button>
+</div>
+
+<div id="chart">
+  <apx-chart
+    [series]="chartOptions.series!"
+    [chart]="chartOptions.chart!"
+    [dataLabels]="chartOptions.dataLabels!"
+    [plotOptions]="chartOptions.plotOptions!"
+    [yaxis]="chartOptions.yaxis!"
+    [xaxis]="chartOptions.xaxis!"
+    [fill]="chartOptions.fill!"
+    [title]="chartOptions.title!"
+  ></apx-chart>
+</div>

@@ -1,1 +1,48 @@
-<app-custom-analytics-card />
+<ng-container>
+  <div class="col-12 p-0 my-[42px]">
+    <div class="row gy-4">
+      <div class="col-12 col-sm-4 col-md-3" routerLink="/guide">
+        <app-custom-analytics-card
+          [data]="{
+            title: 'User Guide',
+            icon: 'assets/images/svgs/user-guide.svg',
+            heightCard: '100%',
+            des: 'Access detailed user guides and manuals'
+          }"
+        ></app-custom-analytics-card>
+      </div>
+      <div class="col-12 col-sm-4 col-md-3" routerLink="/faq">
+        <app-custom-analytics-card
+          [data]="{
+            title: 'FAQs',
+            icon: 'assets/images/svgs/faq.svg',
+            heightCard: '100%',
+            des: 'Find answers to frequently asked questions'
+          }"
+        ></app-custom-analytics-card>
+      </div>
+
+      <div class="col-12 col-sm-4 col-md-3" routerLink="/faq">
+        <app-custom-analytics-card
+          [data]="{
+            title: 'FAQs',
+            icon: 'assets/images/svgs/knowleadge.svg',
+            heightCard: '100%',
+            des: 'Find answers to frequently asked questions'
+          }"
+        ></app-custom-analytics-card>
+      </div>
+
+      <div class="col-12 col-sm-4 col-md-3" routerLink="/tutorial">
+        <app-custom-analytics-card
+          [data]="{
+            title: ' Tutorials ',
+            icon: 'assets/images/svgs/tutorial.svg',
+            heightCard: '100%',
+            des: 'Explore tutorials to get better with the platform'
+          }"
+        ></app-custom-analytics-card>
+      </div>
+    </div>
+  </div>
+</ng-container>

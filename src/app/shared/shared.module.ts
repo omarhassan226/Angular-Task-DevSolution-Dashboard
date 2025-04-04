@@ -13,8 +13,15 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
+import { MatCardModule } from '@angular/material/card';
+// import { TablerIconsModule } from 'angular-tabler-icons';
+import { TruncatePipe } from './pipes/truncate/truncate.pipe';
+import { MatMenuModule } from '@angular/material/menu';
+import { NgxChartsModule } from '@swimlane/ngx-charts';
+import { CustomTableComponent } from './components/custom-table/custom-table.component';
+import { MatTableModule } from '@angular/material/table';
 
-const SharedComponents = [CustomAnalyticsCardComponent];
+const SharedComponents = [CustomAnalyticsCardComponent, CustomTableComponent];
 const AngularMaterialSharedModules = [
   MatProgressSpinnerModule,
   MatSidenavModule,
@@ -24,11 +31,15 @@ const AngularMaterialSharedModules = [
   MatIconModule,
   MatFormFieldModule,
   MatInputModule,
+  // TablerIconsModule,
+  MatCardModule,
+  MatMenuModule,
+  NgxChartsModule,
 ];
 
 @NgModule({
   declarations: [...SharedComponents],
-  imports: [CommonModule, SharedRoutingModule],
+  imports: [CommonModule, SharedRoutingModule, TruncatePipe, MatTableModule],
   exports: [...SharedComponents, ...AngularMaterialSharedModules],
 })
 export class SharedModule {}

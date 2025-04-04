@@ -225,8 +225,18 @@
 
     <!-- Page Content -->
     <div class="content">
-      <app-analytics-cards></app-analytics-cards>
-      <router-outlet></router-outlet>
+      <div>
+        <app-analytics-cards />
+      </div>
+
+      <div class="row col-12">
+        <app-report-chart class="col-md-6"></app-report-chart>
+        <app-visits-chart class="col-md-6"></app-visits-chart>
+      </div>
+
+      <div>
+        <app-recent-orders></app-recent-orders>
+      </div>
     </div>
   </mat-sidenav-content>
 </mat-sidenav-container>

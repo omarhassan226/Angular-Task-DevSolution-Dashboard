@@ -1,0 +1,11 @@
+$cardshadow: rgb(145 158 171 / 30%) 0px 0px 2px 0px,
+  rgb(145 158 171 / 12%) 0px 12px 24px -4px;
+
+$border-radius: 0;
+
+$cardbg: white;
+:export {
+  card-shadow: $cardshadow;
+  cardbg: $cardbg;
+  border-rad: $border-radius;
+}
