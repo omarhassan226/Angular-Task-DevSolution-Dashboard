@@ -1,5 +1,5 @@
 export const environment = {
   production: true,
-  apiUrl: 'https://develop.fnrcoerp.com/api',
+  apiUrl: 'https://devsolution.onrender.com/api/v1',
   moduleId: 3,
 };
