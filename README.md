@@ -17,6 +17,7 @@ This dashboard is designed to manage orders, users, items, transactions, reports
 - **Responsive layout** with `Flexbox` , `CSS Grid` , `bootstrap` and `Tailwind`
 - **Real API integration** with `nodejs` in backend **API Url** `https://devsolution.onrender.com/api/v1` **Backend server deployment**
 - **Backend repo** `https://github.com/omarhassan226/Angular-Task-Backend.git`
+- **Depolyment Link** `https://angular-task-dev-solution-dashboard-gpil.vercel.app/dashboard`
 
 ---
 
