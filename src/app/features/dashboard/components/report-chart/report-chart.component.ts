@@ -58,7 +58,7 @@ export class ReportChartComponent {
       height: 350,
       zoom: {
         type: 'x',
-        enabled: true,
+        enabled: false,
         autoScaleYaxis: true,
       },
       toolbar: { autoSelected: 'zoom' },

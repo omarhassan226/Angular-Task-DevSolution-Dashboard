@@ -15,10 +15,6 @@ export class DashboardComponent {
     this.isDropdownOpen = !this.isDropdownOpen;
   }
 
-  logout() {
-    console.log('User logged out');
-  }
-
   @HostListener('window:resize', ['$event'])
   onResize(event: any) {
     this.isSidebarOpen = event.target.innerWidth > 750;

@@ -1,4 +1,8 @@
-<mat-card class="product-card shadow-sm border border-primary">
+<mat-card
+  class="product-card shadow-sm border border-primary"
+  *ngIf="!product.loading"
+  (click)="sppinerCheck()"
+>
   <div class="text-center p-3 bg-light rounded-top">
     <img
       [src]="product.icon"
@@ -17,3 +21,4 @@
     </div>
   </mat-card-content>
 </mat-card>
+<mat-spinner *ngIf="product.loading" diameter="32"></mat-spinner>

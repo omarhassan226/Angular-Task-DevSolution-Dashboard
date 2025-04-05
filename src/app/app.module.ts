@@ -7,6 +7,7 @@ import { CoreModule } from './core/core.module';
 import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
 import { SharedModule } from './shared/shared.module';
 import { HttpClientModule } from '@angular/common/http';
+import { SweetAlert2Module } from '@sweetalert2/ngx-sweetalert2';
 
 @NgModule({
   declarations: [AppComponent],
@@ -16,6 +17,7 @@ import { HttpClientModule } from '@angular/common/http';
     CoreModule,
     SharedModule,
     HttpClientModule,
+    SweetAlert2Module.forRoot(),
   ],
   providers: [provideAnimationsAsync()],
   bootstrap: [AppComponent],

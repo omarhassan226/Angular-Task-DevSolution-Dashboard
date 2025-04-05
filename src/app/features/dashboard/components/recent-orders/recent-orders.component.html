@@ -12,5 +12,10 @@
       View Order Page <i class="fa-solid fa-arrow-right"></i>
     </div>
   </div>
-  <app-custom-table [dataSource]="orders"></app-custom-table>
+
+  <app-custom-table [dataSource]="orders" *ngIf="!isloading"></app-custom-table>
+
+  <div class="spinner-container">
+    <mat-spinner *ngIf="isloading" diameter="42"></mat-spinner>
+  </div>
 </div>

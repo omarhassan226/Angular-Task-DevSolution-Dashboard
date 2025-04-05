@@ -1,6 +1,7 @@
 import { Component, inject, OnInit } from '@angular/core';
 import { MasterDataService } from '../../../../core/services/master-data.service';
 import { analytics } from '../../../../core/models/master-data-models';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-analytics-cards',
@@ -32,10 +33,16 @@ export class AnalyticsCardsComponent implements OnInit {
     this.masterDataService.getAnalytics().subscribe({
       next: (res: analytics[]) => {
         this.analyticsData = res[0];
-        console.log(this.analyticsData);
       },
       error: (err: string) => {
         console.error('Error fetching analytics data:', err);
+        Swal.fire({
+          title: 'Error!',
+          text: 'Something went wrong, Try again later!',
+          icon: 'error',
+          showCancelButton: true,
+          cancelButtonColor: '#d33',
+        });
       },
     });
   }

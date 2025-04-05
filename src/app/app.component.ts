@@ -1,6 +1,13 @@
 import { animate, style, transition, trigger } from '@angular/animations';
-import { Component, HostListener , OnInit} from '@angular/core';
-import { Router } from '@angular/router';
+import {
+  Component,
+  HostListener,
+  OnChanges,
+  OnInit,
+  SimpleChanges,
+} from '@angular/core';
+import { NavigationEnd, Router } from '@angular/router';
+import { filter } from 'rxjs';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -31,30 +38,26 @@ export class AppComponent implements OnInit {
   messageNotify = false;
   selectedItem = 'dashboard';
   isLoggedIn = false;
+  showLayout = true;
 
-  constructor(private router : Router) { }
-  ngOnInit(): void {
-      this.checkAutherization()
+  constructor(private router: Router) {
+    this.router.events
+      .pipe(filter((event: any) => event instanceof NavigationEnd))
+      .subscribe((event: NavigationEnd) => {
+        const noLayoutRoutes = ['/user-management/login'];
+        this.showLayout = !noLayoutRoutes.includes(event.urlAfterRedirects);
+      });
   }
+
+  ngOnInit(): void {}
+
   toggleDropdown() {
     this.isDropdownOpen = !this.isDropdownOpen;
   }
 
-
-  checkAutherization(){
-    const token = localStorage.getItem('token');
-    if(token == null || !token){
-      this.isLoggedIn = false
-    }else{
-      this.isLoggedIn = true
-    }
-  }
   logout() {
-    localStorage.removeItem('token')
-    this.isLoggedIn = false
-  }
-
-  login(){
+    localStorage.removeItem('token');
+    this.isLoggedIn = false;
     this.router.navigate(['/user-management/login']);
   }
 

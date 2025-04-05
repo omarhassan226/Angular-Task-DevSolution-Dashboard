@@ -1,12 +1,13 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { AuthGuard } from './shared/guards/auth.guard';
 
 const routes: Routes = [
-  // { path: 'module1', loadChildren: () => import('./modules/module1/module1.module').then(m => m.Module1Module) },
-  // { path: 'module2', loadChildren: () => import('./modules/module2/module2.module').then(m => m.Module2Module) },
-  // { path: 'module3', loadChildren: () => import('./modules/module3/module3.module').then(m => m.Module3Module) },
-  // { path: 'module4', loadChildren: () => import('./modules/module4/module4.module').then(m => m.Module4Module) },
-  { path: '', redirectTo: '/dashboard', pathMatch: 'full' },
+  {
+    path: '',
+    redirectTo: '/dashboard',
+    pathMatch: 'full',
+  },
   {
     path: 'dashboard',
     loadChildren: () =>
@@ -19,9 +20,14 @@ const routes: Routes = [
     loadChildren: () =>
       import('./features/orders/orders.module').then((m) => m.OrdersModule),
   },
-  { path: 'user-management', loadChildren: () => import('./features/user-management/user-management.module').then(m => m.UserManagementModule) },
+  {
+    path: 'user-management',
+    loadChildren: () =>
+      import('./features/user-management/user-management.module').then(
+        (m) => m.UserManagementModule
+      ),
+  },
   { path: '**', redirectTo: '/dashboard' },
-
 ];
 
 @NgModule({

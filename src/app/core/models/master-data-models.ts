@@ -18,6 +18,7 @@ export interface Product {
   price: number;
   icon: string;
   createdOn: string;
+  loading?: boolean;
   __v: number;
 }
 

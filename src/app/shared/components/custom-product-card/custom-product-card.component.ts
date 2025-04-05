@@ -12,5 +12,10 @@ export class CustomProductCardComponent {
     price: 0,
     icon: '',
     createdOn: '',
+    loading: false,
   };
+
+  sppinerCheck() {
+    this.product.loading = true;
+  }
 }
