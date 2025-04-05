@@ -1,0 +1,19 @@
+<mat-card class="product-card shadow-sm border border-primary">
+  <div class="text-center p-3 bg-light rounded-top">
+    <img
+      [src]="product.icon"
+      class="img-fluid rounded product-img"
+      alt="{{ product.title }}"
+    />
+  </div>
+  <mat-card-content class="p-3">
+    <h5 class="text-primary fw-semibold">{{ product.title }}</h5>
+    <p class="text-muted small mb-2">
+      Released: {{ product.createdOn | date : "mediumDate" }}
+    </p>
+    <div class="d-flex justify-content-between align-items-center">
+      <span class="h5 text-primary m-0">${{ product.price }}</span>
+      <button mat-raised-button color="primary">Buy Now</button>
+    </div>
+  </mat-card-content>
+</mat-card>

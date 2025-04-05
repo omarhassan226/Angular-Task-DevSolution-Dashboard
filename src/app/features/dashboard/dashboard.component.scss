@@ -187,7 +187,7 @@ strong {
 .dropdown-menu {
   position: absolute;
   top: 50px;
-  right: 0;
+  right: 0 !important;
   background-color: $background-light;
   border: 1px solid $border-light;
   border-radius: 5px;

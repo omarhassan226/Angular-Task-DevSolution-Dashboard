@@ -1,0 +1,16 @@
+.product-card {
+  max-width: 350px;
+  background-color: white;
+  border-radius: 16px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+  &:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+  }
+
+  .product-img {
+    max-height: 200px;
+    object-fit: contain;
+  }
+}
