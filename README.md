@@ -37,7 +37,7 @@ cd Angular-Task-DevSolution-Dashboard
 
 ## 2. Install dependencies
 
-npm install
+npm install or npm install --force if have an errors with first command
 
 ## 3. Run the app locally
 
