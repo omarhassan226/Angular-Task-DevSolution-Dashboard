@@ -1,27 +1,49 @@
-# DevSolutionDashboard
+# 📊 DevSolution Dashboard
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 18.2.11.
+A responsive, modern admin dashboard built with **Angular**, **Angular Material**.
+This dashboard is designed to manage orders, users, items, transactions, reports, and more—perfect for enterprise-level admin panels or SaaS back-office systems.
 
-## Development server
+---
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+## 🚀 Tech Stack
 
-## Code scaffolding
+- **Angular** 18+
+- **Angular Material** for UI components
+- **SCSS** for styling
+- **ApexCharts** for data visualization
+- **ngx-toastr / SweetAlert2** for notifications
+- **Authentication**
+- **Protected routes with guards**
+- **Responsive layout** with `Flexbox` , `CSS Grid` , `bootstrap` and `Tailwind`
+- **Real API integration** with `nodejs` in backend **API Url** `https://devsolution.onrender.com/api/v1` **Backend server deployment**
+- **Backend repo** `https://github.com/omarhassan226/Angular-Task-Backend.git`
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+---
 
-## Build
+## 📁 Project Structure
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+src/ │ ├── app/ │ ├── core/ → services, interceptors, guards, constants, models, core-module │ ├── shared/ → shared components, pipes, directives │ ├── modules/ → feature modules like dashboard, Orders, user-management. │ ├── pages in feature modules/ → routed pages like login, Recent-orders, etc. │ └── app-routing.module.ts │ ├── assets/ │ ├── images/ │ └── styles/ │ └── environments/
 
-## Running unit tests
+---
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+## 🧑‍💻 Getting Started
 
-## Running end-to-end tests
+### 1. Clone the repository
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+```bash
+git clone https://github.com/omarhassan226/Angular-Task-DevSolution-Dashboard.git
+cd Angular-Task-DevSolution-Dashboard
+```
 
-## Further help
+## 2. Install dependencies
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+npm install
+
+## 3. Run the app locally
+
+ng serve
+
+## 4- Login with Credinatials
+
+"email": omar@gmail.com,
+"password": Omar2014
