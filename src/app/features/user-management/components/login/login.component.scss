@@ -1,0 +1,68 @@
+/* Remove internal divider line in outline inputs */
+.mat-form-field-appearance-outline .mat-form-field-outline-gap {
+  border-top-color: transparent !important;
+  width: 0% !important;
+}
+
+/* Optional: Cleaner outline style */
+.mat-form-field-appearance-outline .mat-form-field-outline {
+  border: 1px solid currentColor;
+  border-radius: 4px;
+}
+
+/* Your existing styles */
+.login-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+  padding: 1rem;
+}
+
+label{
+  margin-bottom: -20px;
+}
+
+.login-card {
+  max-width: 450px;
+  width: 100%;
+  padding: 2rem;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+
+  @media (max-width: 576px) {
+    padding: 1.5rem;
+  }
+}
+
+.login-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.login-button {
+  height: 48px;
+  font-size: 16px;
+  font-weight: 500;
+  margin-top: 1rem;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.w-100 {
+  width: 100%;
+}
+
+.error-snackbar {
+  background-color: #f44336;
+  color: white;
+}
+
+.success-snackbar {
+  background-color: #4caf50;
+  color: white;
+}

@@ -19,7 +19,9 @@ const routes: Routes = [
     loadChildren: () =>
       import('./features/orders/orders.module').then((m) => m.OrdersModule),
   },
+  { path: 'user-management', loadChildren: () => import('./features/user-management/user-management.module').then(m => m.UserManagementModule) },
   { path: '**', redirectTo: '/dashboard' },
+
 ];
 
 @NgModule({

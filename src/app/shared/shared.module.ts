@@ -22,6 +22,8 @@ import { CustomTableComponent } from './components/custom-table/custom-table.com
 import { MatTableModule } from '@angular/material/table';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { CustomProductCardComponent } from './components/custom-product-card/custom-product-card.component';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
+import { LoaderComponent } from './components/loader/loader.component';
 
 const SharedComponents = [
   CustomAnalyticsCardComponent,
@@ -37,6 +39,7 @@ const AngularMaterialSharedModules = [
   MatIconModule,
   MatFormFieldModule,
   MatInputModule,
+  MatSnackBarModule,
   // TablerIconsModule,
   MatCardModule,
   MatMenuModule,
@@ -46,7 +49,7 @@ const AngularMaterialSharedModules = [
 ];
 
 @NgModule({
-  declarations: [...SharedComponents],
+  declarations: [...SharedComponents, LoaderComponent],
   imports: [
     CommonModule,
     SharedRoutingModule,

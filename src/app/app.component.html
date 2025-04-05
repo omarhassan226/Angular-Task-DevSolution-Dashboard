@@ -215,6 +215,16 @@
             }}</mat-icon>
           </div>
 
+
+          <div class="auth-links">
+            <button *ngIf="isLoggedIn" mat-stroked-button class="auth-button" (click)="logout()">
+              <span>Logout</span>
+            </button>
+            <button *ngIf="!isLoggedIn" mat-flat-button color="primary" class="auth-button" (click)="login()">
+              <span>Login</span>
+            </button>
+          </div>
+
           <!-- Dropdown Menu -->
           <div
             style="position: absolute; right: 0 !important; width: 250px"

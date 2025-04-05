@@ -63,7 +63,23 @@ $text-color: #000000;
     background-color: $secondary-color;
   }
 }
+.auth-links {
+  display: flex;
+  align-items: center;
+  margin-left: 16px;
 
+  .auth-button {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+
+    mat-icon {
+      font-size: 20px;
+      width: 20px;
+      height: 20px;
+    }
+  }
+}
 .navbar {
   display: flex;
   align-items: center;
